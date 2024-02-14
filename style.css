@@ -1,0 +1,17 @@
+body {
+    background-color: rgb(18, 17, 17);
+    }
+
+    .sketch-screen {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .column {
+        display: flex;
+        flex-direction: column;
+    }
+    .row {
+        border: 2px solid black;
+        flex: 1;
+        text-align: center;
+    }
