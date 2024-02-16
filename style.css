@@ -1,17 +1,136 @@
+/*/ pseudo classes /*/
+/*/ Main Content /*/
 body {
+    display: flex;
     background-color: rgb(18, 17, 17);
+    flex-direction: column;
+    margin:0;
+    height: 105vh;
+    justify-content: center;
+    align-items: center;
+ 
     }
 
-    .sketch-screen {
+
+    #MasterContainer{
+        margin-top: 10rem;
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
+        align-items: center; 
+        max-width: 350px;
+   
     }
-    .column {
-        display: flex;
-        flex-direction: column;
+
+
+    .flex-item-small {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 1rem;
+    width: 1rem;
+    background-color: red;
+    border-color: aqua;
+}
+
+.flex-item-med {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 3rem;
+    width: 3rem;
+    background-color: red;
+    border-color: aqua;
+}
+
+.flex-item-large {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 5rem;
+    width: 5rem;
+    background-color: red;
+    border-color: aqua;
+}
+
+
+
+
+
+
+
+
+
+
+
+.top-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+/*/buttons/*/
+
+#clearbutton {
+    width: 3rem;
+    height: 3rem;
+}
+
+#userinput{
+    width: 3rem;
+    height: 3rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*/ Hoverstates /*/
+
+.flex-item:hover {
+    cursor: pointer;
+    background-color: rgb(247, 124, 124);
+    opacity: 30%;
+}
+
+
+
+
+
+
+
+
+
+
+/*/media queries /*/
+@media screen and (min-width: 100px) {
+    body {
+      background-color: lightgreen;
     }
-    .row {
-        border: 2px solid black;
-        flex: 1;
-        text-align: center;
-    }
+  }
+  
+
+
+
+  
