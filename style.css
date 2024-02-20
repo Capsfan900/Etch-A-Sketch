@@ -1,135 +1,57 @@
-/*/ pseudo classes /*/
-/*/ Main Content /*/
 body {
     display: flex;
-    background-color: rgb(18, 17, 17);
-    flex-direction: column;
-    margin:0;
-    height: 105vh;
     justify-content: center;
     align-items: center;
- 
-    }
-
-
-    #MasterContainer{
-        margin-top: 10rem;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center; 
-        max-width: 350px;
-   
-    }
-
-
-    .flex-item-small {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    height: 1rem;
-    width: 1rem;
-    background-color: red;
-    border-color: aqua;
+    background-image: url(./img/Frame\ 1.png);
+    
 }
 
-.flex-item-med {
-    position: relative;
+.main {
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    height: 3rem;
-    width: 3rem;
-    background-color: red;
-    border-color: aqua;
+    background-color: black;
 }
 
-.flex-item-large {
-    position: relative;
+.box {
     display: flex;
-    justify-content: center;
-    height: 5rem;
-    width: 5rem;
-    background-color: red;
-    border-color: aqua;
+    width: 960px;
+    height: 960px;
+    border: 32px solid rgb(0, 0, 0);
 }
 
+.square {
+    background-color: rgb(230, 230, 213);
+    border: 0.96px solid rgb(43, 32, 32);
+}
 
+.controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    gap: 1.5rem;
+}
 
-
-
-
-
-
-
-
-
-.top-button-container {
+#log {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 25px;
+    height:fit-content;
+    width: fit-content;
 
 }
 
-
-/*/buttons/*/
-
-#clearbutton {
-    width: 3rem;
-    height: 3rem;
+#clearGrid{
+    display: flex;
+    background-color: rgb(107, 107, 218);
+    height: fit-content;
+    width: fit-content;
 }
-
-#userinput{
-    width: 3rem;
-    height: 3rem;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*/ Hoverstates /*/
-
-.flex-item:hover {
-    cursor: pointer;
-    background-color: rgb(247, 124, 124);
-    opacity: 30%;
-}
-
-
-
-
-
-
-
-
 
 
 /*/media queries /*/
-@media screen and (min-width: 100px) {
-    body {
-      background-color: lightgreen;
-    }
-  }
-  
+
 
 
 

@@ -1,36 +1,25 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel ="stylesheet" href = "style.css">
-    <script defer src="script.js"></script>
+    <title>Etch-a-sketch</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
-<div class ="top-button-container">
-    <button id = "clearbutton"></button>
-    <button id ='userinput'></button>
-</div>
 <body>
-    <div id ="MasterContainer">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <div class="contentWrapper">
+        <div class="box"></div>
+        <div class="controls">
+            <button id ="clearGrid">ClearGrid</button>
+            <label for="square-number"> Grid Element size:</label>
+            <input type="number" id="square-number" value="42" min="1" max="100" onchange="gridElementUpdate()">
+            <label>Colourful?</label>
+            <input type="checkbox" id="colorful">
+            <label>Darken?</label>
+            <input type="checkbox" id="darken">
+        </div>
+        <div id="log"></div>
+        
     </div>
 </body>
 </html>

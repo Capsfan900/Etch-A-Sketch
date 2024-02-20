@@ -1,55 +1,67 @@
-// DOM references
-let button = document.getElementById("userinput");
-const flexContainer = document.getElementById("MasterContainer"); // Make sure this ID matches your actual container
-let size = promptUser()
-// Global scope variables
-let rows;
-let columns;
+const box = document.querySelector(".box");
+const BOX_WIDTH = 960;
+const ELEMENT_BORDER_WIDTH = 0.96;
+const clearGrid1 = document.getElementById("#clearGrid");
 
-// Main content
-function promptUser() {
-    let userInput = prompt("Enter two numbers of columns and rows separated by a comma");
-    // Split the input by comma and convert each element to a number
-    let num1 = Number(userInput.split(",")[0]);
-    let num2 = Number(userInput.split(",")[1]);
-    let userResult = num1 * num2;
-   console.log(userResult);
+
+
+function gridElementUpdate(){
+    let numberOfSquares = document.querySelector('#square-number').value;
+    //fits any number of squares in box up to 64 x 64
+    sideLength = BOX_WIDTH/numberOfSquares - (ELEMENT_BORDER_WIDTH*2);
+    // console.log(sideLength);          //#debug
+    // console.log(numberOfSquares);     //#debug
+    clearGrid();
+    drawGrid(numberOfSquares);
 }
 
-function createGrid() {
-    if (size >= 0 && size <= 256) {
-        for (let i = 0; i < size; i++) {
-            const squares = document.createElement("div");
-            squares.classList = "flex-item-large";
-            flexContainer.appendChild(squares);
+function clearGrid(){
+    while(box.firstChild) {
+        box.removeChild(box.lastChild);
+    }
+}
+//loop to create a line elment and add squares to the line
+//followed by adding line to the '.box' element
+
+function drawGrid(n_square) {
+    for(let i=0; i < n_square; i++){ 
+        const lineElement = document.createElement('div');
+        lineElement.classList.add('line');      
+        lineElement.id = 'l' + i;
+        //rows
+        for(let j=0; j < n_square; j++) {
+            const divEle = document.createElement("div");
+            divEle.classList.add('square');
+            divEle.id = 'sq' + j;
+            divEle.style.height = sideLength + 'px';
+            divEle.style.width = sideLength + 'px';
+            lineElement.appendChild(divEle);
+            //append columns to rows
         }
-    } else if (size >= 258 && size <= 784) {
-        for (let i = 0; i < size; i++) {
-            const squares = document.createElement("div");
-            squares.classList = "flex-item-med";
-            flexContainer.appendChild(squares);
-        }
-    } else if (size >= 786 && size <= 4096) {
-        for (let i = 0; i < size; i++) {
-            const squares = document.createElement("div");
-            squares.classList = "flex-item-small";
-            flexContainer.appendChild(squares);
-        }
-        // Customize the content or other properties of each square if needed
+        box.appendChild(lineElement);
     }
 }
 
-createGrid(size);
+// dispaly cursor postion 
 
+box.addEventListener('mousemove', (e) => {
+    let log = document.querySelector('#log');
+    log.innerText = `
+    Screen X/Y: (${e.screenX}, ${e.screenY})
+    Client X/Y: (${e.clientX}, ${e.clientY})`
+    const elementMouseIsOver = document.elementFromPoint(e.clientX, e.clientY);
+    const isColorful = document.querySelector('#colorful').checked;
+    //js for condition when isColorful is clicked 
+    isColorful?
+    elementMouseIsOver.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16):
+    elementMouseIsOver.style.backgroundColor = '#400080';
 
+   
+});
 
+ //function calls
 
-
-
-
-
-
-
+gridElementUpdate(); //first call to load the grid on the page
 
 
 
