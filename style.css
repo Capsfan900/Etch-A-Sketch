@@ -3,6 +3,7 @@ body {
     justify-content: center;
     align-items: center;
     background-image: url(./img/Frame\ 1.png);
+    background-size:cover;
     
 }
 

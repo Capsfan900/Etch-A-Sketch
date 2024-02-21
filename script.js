@@ -1,7 +1,7 @@
 const box = document.querySelector(".box");
 const BOX_WIDTH = 960;
 const ELEMENT_BORDER_WIDTH = 0.96;
-const clearGrid1 = document.getElementById("#clearGrid");
+const button = document.getElementById("clearGrid");
 
 
 
@@ -20,6 +20,10 @@ function clearGrid(){
         box.removeChild(box.lastChild);
     }
 }
+
+function clearBtn(){
+    window.location.reload();
+}
 //loop to create a line elment and add squares to the line
 //followed by adding line to the '.box' element
 
@@ -36,7 +40,7 @@ function drawGrid(n_square) {
             divEle.style.height = sideLength + 'px';
             divEle.style.width = sideLength + 'px';
             lineElement.appendChild(divEle);
-            //append columns to rows
+            // columns
         }
         box.appendChild(lineElement);
     }
@@ -55,9 +59,8 @@ box.addEventListener('mousemove', (e) => {
     isColorful?
     elementMouseIsOver.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16):
     elementMouseIsOver.style.backgroundColor = '#400080';
-
-   
 });
+
 
  //function calls
 
@@ -66,8 +69,9 @@ gridElementUpdate(); //first call to load the grid on the page
 
 
 
+//event listeners
 
-
+button.addEventListener("click", clearBtn);
 
 
 
